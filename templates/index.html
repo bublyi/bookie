@@ -4,11 +4,35 @@
 <div class="main">
     <div class="title-section">
         <h2>My Books</h2>
-        <p>Coming soon...</p>
+        <a href="{{ url_for('add_book') }}" class="button">Add Book</a>
     </div>
-    
-    <div class="placeholder">
-        <p>This is where your book list will appear</p>
-    </div>
+
+    {% if books %}
+        <div class="books-grid">
+            {% for book in books %}
+            <div class="book-card">
+                <h3>{{ book.title }}</h3>
+                <p>by {{ book.author }}</p>
+                
+                {% if book.status == 'To Read' %}
+                    <span class="status to-read">To Read</span>
+                {% elif book.status == 'Reading' %}
+                    <span class="status reading">Reading</span>
+                {% elif book.status == 'Finished' %}
+                    <span class="status finished">Finished</span>
+                {% endif %}
+                
+                <div class="book-buttons">
+                    <a href="{{ url_for('edit_book', book_id=book.id) }}" class="button small">Edit</a>
+                    <form method="POST" action="{{ url_for('delete_book', book_id=book.id) }}" style="display: inline;">
+                        <button type="submit" class="button small delete" onclick="return confirm('Delete this book?')">Delete</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="no-books">No books yet. Add your first book!</p>
+    {% endif %}
 </div>
 {% endblock %}

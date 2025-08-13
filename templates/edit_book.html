@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Edit Book</h2>
+    
+    <form method="POST">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" value="{{ book.title }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" value="{{ book.author }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+                <option value="To Read" {% if book.status == 'To Read' %}selected{% endif %}>To Read</option>
+                <option value="Reading" {% if book.status == 'Reading' %}selected{% endif %}>Reading</option>
+                <option value="Finished" {% if book.status == 'Finished' %}selected{% endif %}>Finished</option>
+            </select>
+        </div>
+        
+        <div class="form-buttons">
+            <button type="submit" class="button">Update Book</button>
+            <a href="{{ url_for('index') }}" class="button">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
