@@ -27,18 +27,8 @@ body {
     margin: 5px;
 }
 
-.button.small {
-    padding: 3px 8px;
-    font-size: 12px;
-}
-
 .button.delete {
     background-color: red;
-}
-
-.title-section {
-    text-align: center;
-    margin: 20px 0;
 }
 
 .book-card {
@@ -52,57 +42,18 @@ body {
     padding: 2px 5px;
 }
 
-.books-grid {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.book-buttons {
-    margin-top: 10px;
-}
-
-.no-books {
-    text-align: center;
-    color: #666;
-    margin: 40px 0;
-}
-
-.messages {
-    margin: 10px 0;
-}
-
-.message {
-    background-color: #d4edda;
-    color: #155724;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #c3e6cb;
-    border-radius: 4px;
-}
-
 .form-container {
     border: 1px solid black;
     padding: 20px;
     max-width: 400px;
-    margin: 0 auto;
 }
 
 .form-group {
     margin: 10px 0;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-
 .form-group input,
 .form-group select {
     width: 100%;
     padding: 5px;
-}
-
-.form-buttons {
-    margin-top: 20px;
-    text-align: center;
 }

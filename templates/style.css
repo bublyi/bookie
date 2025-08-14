@@ -1,0 +1,32 @@
+/* Simple styling for the book tracker */
+body {
+    background-color: #f8f9fa;
+}
+
+.book-card {
+    transition: transform 0.2s;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.book-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn {
+    border-radius: 6px;
+}
+
+.badge {
+    font-size: 0.8em;
+}
